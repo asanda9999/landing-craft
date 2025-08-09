@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
+import { NavBarDemo } from './components/ui/demo';
+import { BackgroundPaths } from './components/ui/background-paths';
 import Features from './components/Features';
 import Pricing from './components/Pricing';
 import Stats from './components/Stats';
@@ -10,9 +10,9 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      <NavBarDemo />
       <main>
-        <Hero />
+        <BackgroundPaths title="Hydra Tech crafted with creativity" />
         <Features />
         <Pricing />
         <Stats />

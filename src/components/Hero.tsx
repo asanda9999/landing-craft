@@ -4,20 +4,20 @@ import { ArrowRight, Play } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+    <section className="relative min-h-screen bg-white overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.1 }}
+          animate={{ scale: 1, opacity: 0.05 }}
           transition={{ duration: 2, ease: "easeOut" }}
-          className="absolute top-20 right-10 w-96 h-96 bg-purple-400 rounded-full blur-3xl"
+          className="absolute top-20 right-10 w-96 h-96 bg-gray-300 rounded-full blur-3xl"
         />
         <motion.div
           initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.05 }}
+          animate={{ scale: 1, opacity: 0.03 }}
           transition={{ duration: 2, delay: 0.5, ease: "easeOut" }}
-          className="absolute bottom-20 left-10 w-80 h-80 bg-blue-400 rounded-full blur-3xl"
+          className="absolute bottom-20 left-10 w-80 h-80 bg-gray-400 rounded-full blur-3xl"
         />
       </div>
 
@@ -35,11 +35,11 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight"
+                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black leading-tight"
               >
                 Beautiful landing pages
                 <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
+                <span className="text-black">
                   that convert visitors
                 </span>
               </motion.h1>
@@ -87,15 +87,15 @@ const Hero = () => {
               className="flex items-center gap-8 pt-4"
             >
               <div className="text-center">
-                <div className="text-2xl font-bold text-gray-900">200+</div>
+                <div className="text-2xl font-bold text-black">200+</div>
                 <div className="text-sm text-gray-600">Projects</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-gray-900">98%</div>
+                <div className="text-2xl font-bold text-black">98%</div>
                 <div className="text-sm text-gray-600">Satisfaction</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-gray-900">7 Days</div>
+                <div className="text-2xl font-bold text-black">7 Days</div>
                 <div className="text-sm text-gray-600">Avg Delivery</div>
               </div>
             </motion.div>
@@ -115,7 +115,7 @@ const Hero = () => {
                 className="relative z-10"
               >
                 <div className="w-72 h-[600px] bg-black rounded-[3rem] p-2 shadow-2xl">
-                  <div className="w-full h-full bg-gradient-to-br from-purple-500 via-blue-500 to-green-400 rounded-[2.5rem] p-6 flex flex-col">
+                  <div className="w-full h-full bg-gray-900 rounded-[2.5rem] p-6 flex flex-col">
                     <div className="flex justify-between items-center mb-8">
                       <div className="text-white text-sm font-medium">Portfolio</div>
                       <div className="flex gap-1">
@@ -163,7 +163,7 @@ const Hero = () => {
                 className="absolute -left-8 top-20 w-32 h-20 bg-white rounded-xl shadow-lg p-3"
               >
                 <div className="text-xs text-gray-600 mb-1">Leads Generated</div>
-                <div className="text-lg font-bold text-green-600">+127</div>
+                <div className="text-lg font-bold text-black">+127</div>
               </motion.div>
 
               <motion.div
@@ -173,7 +173,7 @@ const Hero = () => {
                 className="absolute -right-6 bottom-32 w-36 h-24 bg-white rounded-xl shadow-lg p-3"
               >
                 <div className="text-xs text-gray-600 mb-1">Revenue Growth</div>
-                <div className="text-lg font-bold text-blue-600">+34%</div>
+                <div className="text-lg font-bold text-black">+34%</div>
                 <div className="text-xs text-gray-500">This month</div>
               </motion.div>
             </div>

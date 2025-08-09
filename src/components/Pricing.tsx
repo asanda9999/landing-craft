@@ -20,7 +20,7 @@ const Pricing = () => {
         '30-day support'
       ],
       popular: false,
-      color: 'from-blue-600 to-purple-600'
+      color: 'bg-black'
     },
     {
       name: 'Professional',
@@ -40,7 +40,7 @@ const Pricing = () => {
         'Performance analytics dashboard'
       ],
       popular: true,
-      color: 'from-purple-600 to-pink-600'
+      color: 'bg-black'
     },
     {
       name: 'Enterprise',
@@ -62,12 +62,12 @@ const Pricing = () => {
         'Free maintenance (3 months)'
       ],
       popular: false,
-      color: 'from-green-600 to-blue-600'
+      color: 'bg-black'
     }
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -76,10 +76,10 @@ const Pricing = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl sm:text-5xl font-bold text-black mb-6">
             Simple, transparent
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
+            <span className="text-black">
               pricing
             </span>
           </h2>
@@ -100,7 +100,7 @@ const Pricing = () => {
               whileHover={{ y: -10, scale: 1.02 }}
               className={`relative bg-white rounded-3xl p-8 shadow-xl border-2 transition-all duration-300 ${
                 plan.popular 
-                  ? 'border-purple-500 shadow-purple-500/20' 
+                  ? 'border-gray-800 shadow-gray-800/20' 
                   : 'border-gray-100 hover:border-gray-200'
               }`}
             >
@@ -112,7 +112,7 @@ const Pricing = () => {
                   transition={{ delay: 0.5 }}
                   className="absolute -top-4 left-1/2 transform -translate-x-1/2"
                 >
-                  <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center gap-2">
+                  <div className="bg-black text-white px-6 py-2 rounded-full text-sm font-semibold flex items-center gap-2">
                     <Star className="w-4 h-4 fill-current" />
                     Most Popular
                   </div>
@@ -120,11 +120,11 @@ const Pricing = () => {
               )}
 
               <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+                <h3 className="text-2xl font-bold text-black mb-2">{plan.name}</h3>
                 <p className="text-gray-600 mb-6">{plan.description}</p>
                 
                 <div className="mb-6">
-                  <span className="text-5xl font-bold text-gray-900">{plan.price}</span>
+                  <span className="text-5xl font-bold text-black">{plan.price}</span>
                   <span className="text-gray-600 ml-2">/{plan.period}</span>
                 </div>
 
@@ -133,8 +133,8 @@ const Pricing = () => {
                   whileTap={{ scale: 0.95 }}
                   className={`w-full py-4 px-6 rounded-full font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2 ${
                     plan.popular
-                      ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:shadow-xl'
-                      : 'bg-gray-900 text-white hover:bg-gray-800 hover:shadow-lg'
+                      ? 'bg-black text-white hover:bg-gray-800 hover:shadow-xl'
+                      : 'bg-black text-white hover:bg-gray-800 hover:shadow-lg'
                   }`}
                 >
                   Get Started
@@ -152,7 +152,7 @@ const Pricing = () => {
                     transition={{ delay: 0.1 * featureIndex }}
                     className="flex items-center gap-3"
                   >
-                    <div className={`w-6 h-6 rounded-full flex items-center justify-center bg-gradient-to-r ${plan.color}`}>
+                    <div className={`w-6 h-6 rounded-full flex items-center justify-center ${plan.color}`}>
                       <Check className="w-4 h-4 text-white" />
                     </div>
                     <span className="text-gray-700">{feature}</span>
@@ -165,7 +165,7 @@ const Pricing = () => {
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 0.5 }}
-                className={`h-1 bg-gradient-to-r ${plan.color} rounded-full mt-8`}
+                className={`h-1 ${plan.color} rounded-full mt-8`}
               />
             </motion.div>
           ))}
@@ -178,14 +178,14 @@ const Pricing = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-center bg-white rounded-2xl p-8 shadow-lg"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-4">Need something custom?</h3>
+          <h3 className="text-2xl font-bold text-black mb-4">Need something custom?</h3>
           <p className="text-gray-600 mb-6">
             We also offer custom solutions for unique business needs. Get in touch for a personalized quote.
           </p>
           <motion.button
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all duration-300"
+            className="bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-800 hover:shadow-lg transition-all duration-300"
           >
             Contact Us
           </motion.button>
