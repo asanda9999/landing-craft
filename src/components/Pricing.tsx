@@ -131,6 +131,7 @@ const Pricing = () => {
                 <motion.button
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                   className={`w-full py-4 px-6 rounded-full font-semibold text-lg transition-all duration-300 flex items-center justify-center gap-2 ${
                     plan.popular
                       ? 'bg-black text-white hover:bg-gray-800 hover:shadow-xl'
@@ -185,6 +186,7 @@ const Pricing = () => {
           <motion.button
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="bg-black text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-800 hover:shadow-lg transition-all duration-300"
           >
             Contact Us

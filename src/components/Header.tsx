@@ -53,12 +53,16 @@ const Header = () => {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <button className="text-gray-800 hover:text-black font-medium transition-colors duration-200">
+            <button 
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="text-gray-800 hover:text-black font-medium transition-colors duration-200"
+            >
               Contact
             </button>
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="bg-black text-white px-6 py-2 rounded-full font-medium hover:bg-gray-800 transition-colors duration-200"
             >
               Get Started
@@ -98,9 +102,11 @@ const Header = () => {
                 ))}
                 <div className="px-4 pt-4 border-t border-gray-100 space-y-3">
                   <button className="block w-full text-left text-gray-800 hover:text-black font-medium transition-colors duration-200">
+                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                     Contact
                   </button>
                   <button className="w-full bg-black text-white py-3 rounded-full font-medium hover:bg-gray-800 transition-colors duration-200">
+                    onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                     Get Started
                   </button>
                 </div>

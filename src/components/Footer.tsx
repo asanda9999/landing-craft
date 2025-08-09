@@ -103,6 +103,7 @@ const Footer = () => {
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="bg-white text-black px-6 py-3 rounded-lg flex items-center gap-3 cursor-pointer hover:bg-gray-100 transition-colors duration-200"
           >
             <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">

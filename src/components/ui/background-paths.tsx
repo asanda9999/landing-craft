@@ -108,6 +108,7 @@ export function BackgroundPaths({
                             className="rounded-[1.15rem] px-8 py-6 text-lg font-semibold backdrop-blur-md 
                             bg-white/95 hover:bg-white/100 text-black transition-all duration-300 
                             group-hover:-translate-y-0.5 border border-black/10 hover:shadow-md"
+                            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                         >
                             <span className="opacity-90 group-hover:opacity-100 transition-opacity">
                                 Start Your Project
