@@ -1,121 +1,245 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Download, Star } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle } from 'lucide-react';
 
 const CTA = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    service: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const services = [
+    'Starter Package ($997)',
+    'Professional Package ($1,997)',
+    'Enterprise Package ($3,997)',
+    'Custom Solution',
+    'Consultation Only'
+  ];
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    try {
+      // Here you would integrate with your email service (EmailJS, Formspree, etc.)
+      // For now, we'll simulate a successful submission
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', service: '', message: '' });
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => setSubmitStatus('idle'), 5000);
+    }
+  };
+
   return (
     <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-white rounded-3xl p-8 sm:p-12 lg:p-16 shadow-2xl relative overflow-hidden">
-          {/* Background Decorations */}
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute top-10 right-10 w-20 h-20 bg-gray-300 rounded-full opacity-10"
-          />
-          <motion.div
-            animate={{ rotate: -360 }}
-            transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-            className="absolute bottom-10 left-10 w-16 h-16 bg-gray-400 rounded-full opacity-10"
-          />
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-4xl sm:text-5xl font-bold text-black mb-6">
+            Ready to get started?
+            <br />
+            <span className="text-black">
+              Let's discuss your project
+            </span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Tell us about your business and goals. We'll get back to you within 24 hours 
+            with a personalized proposal and next steps.
+          </p>
+        </motion.div>
 
-          <div className="relative z-10 text-center max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="bg-white rounded-3xl p-8 sm:p-12 shadow-2xl border border-gray-100"
+        >
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <label htmlFor="name" className="block text-sm font-semibold text-gray-800 mb-2">
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-black focus:border-transparent transition-all duration-200 text-gray-800"
+                  placeholder="Your full name"
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <label htmlFor="email" className="block text-sm font-semibold text-gray-800 mb-2">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-black focus:border-transparent transition-all duration-200 text-gray-800"
+                  placeholder="your@email.com"
+                />
+              </motion.div>
+            </div>
+
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-              className="mb-8"
+              transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <div className="flex justify-center items-center gap-2 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.1, duration: 0.3 }}
-                  >
-                    <Star className="w-6 h-6 text-black fill-current" />
-                  </motion.div>
+              <label htmlFor="service" className="block text-sm font-semibold text-gray-800 mb-2">
+                Service Interested In *
+              </label>
+              <select
+                id="service"
+                name="service"
+                value={formData.service}
+                onChange={handleInputChange}
+                required
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-black focus:border-transparent transition-all duration-200 text-gray-800 bg-white"
+              >
+                <option value="">Select a service...</option>
+                {services.map((service, index) => (
+                  <option key={index} value={service}>
+                    {service}
+                  </option>
                 ))}
-              </div>
-              <p className="text-gray-600 mb-6">Rated 4.6/5 by over 100,000 users</p>
-            </motion.div>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-black mb-6"
-            >
-              Ready to transform your
-              <br />
-              <span className="text-black">
-                online presence?
-              </span>
-            </motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl text-gray-600 mb-10 leading-relaxed"
-            >
-              Join hundreds of small businesses who've already transformed their online presence 
-              with our professional landing pages. Get started with a free consultation today.
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12"
-            >
-              <motion.button
-                whileHover={{ scale: 1.05, y: -3 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-black text-white px-10 py-4 rounded-full font-semibold text-lg flex items-center gap-3 hover:bg-gray-800 hover:shadow-xl transition-all duration-300 min-w-[200px] justify-center"
-              >
-                <Download className="w-5 h-5" />
-                Start Project
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-
-              <motion.button
-                whileHover={{ scale: 1.05, y: -3 }}
-                whileTap={{ scale: 0.95 }}
-                className="border-2 border-gray-300 text-gray-800 px-10 py-4 rounded-full font-semibold text-lg hover:border-gray-400 hover:bg-gray-50 transition-all duration-300 min-w-[200px]"
-              >
-                View Portfolio
-              </motion.button>
+              </select>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center"
+              transition={{ duration: 0.6, delay: 0.6 }}
             >
-              <div className="space-y-2">
-                <div className="text-2xl font-bold text-black">Free</div>
-                <div className="text-gray-600">Consultation</div>
-              </div>
-              <div className="space-y-2">
-                <div className="text-2xl font-bold text-black">24/7</div>
-                <div className="text-gray-600">Support included</div>
-              </div>
-              <div className="space-y-2">
-                <div className="text-2xl font-bold text-black">30 Days</div>
-                <div className="text-gray-600">Free revisions</div>
-              </div>
+              <label htmlFor="message" className="block text-sm font-semibold text-gray-800 mb-2">
+                Project Details *
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                required
+                rows={6}
+                className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-black focus:border-transparent transition-all duration-200 text-gray-800 resize-none"
+                placeholder="Tell us about your business, goals, timeline, and any specific requirements..."
+              />
             </motion.div>
-          </div>
-        </div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              className="pt-4"
+            >
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-black text-white px-8 py-4 rounded-xl font-semibold text-lg flex items-center justify-center gap-3 hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 hover:shadow-xl"
+              >
+                {isSubmitting ? (
+                  <>
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    Sending Message...
+                  </>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5" />
+                    Send Message
+                  </>
+                )}
+              </button>
+            </motion.div>
+
+            {/* Status Messages */}
+            {submitStatus === 'success' && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="flex items-center gap-3 p-4 bg-green-50 border border-green-200 rounded-xl text-green-800"
+              >
+                <CheckCircle className="w-5 h-5 text-green-600" />
+                <span className="font-medium">Message sent successfully! We'll get back to you within 24 hours.</span>
+              </motion.div>
+            )}
+
+            {submitStatus === 'error' && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="flex items-center gap-3 p-4 bg-red-50 border border-red-200 rounded-xl text-red-800"
+              >
+                <AlertCircle className="w-5 h-5 text-red-600" />
+                <span className="font-medium">Something went wrong. Please try again or email us directly.</span>
+              </motion.div>
+            )}
+          </form>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="mt-8 pt-8 border-t border-gray-200 text-center"
+          >
+            <p className="text-gray-600 mb-4">
+              Prefer to reach out directly?
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm">
+              <a href="mailto:hello@landingcraft.com" className="text-black font-semibold hover:underline">
+                hello@landingcraft.com
+              </a>
+              <span className="hidden sm:block text-gray-400">•</span>
+              <a href="tel:+1234567890" className="text-black font-semibold hover:underline">
+                (123) 456-7890
+              </a>
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
