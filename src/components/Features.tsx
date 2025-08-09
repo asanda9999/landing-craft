@@ -4,7 +4,7 @@ import { FeaturesSectionWithHoverEffects } from './ui/feature-section-with-hover
 
 const Features = () => {
   return (
-    <section className="relative py-20 bg-black overflow-hidden">
+    <section id="features" className="relative py-20 bg-black overflow-hidden">
       {/* Animated Background Shapes */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
