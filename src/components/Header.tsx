@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import HydraLogo from "../../assets/Hydra.logo.png";
+import HydraLogo from "../assets/hydra.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

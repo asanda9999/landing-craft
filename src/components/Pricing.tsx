@@ -6,7 +6,7 @@ const Pricing = () => {
   const plans = [
     {
       name: 'Starter',
-      price: 'R1500',
+      price: 'R1,500',
       period: 'one-time',
       description: 'Perfect for small businesses getting started online',
       features: [
