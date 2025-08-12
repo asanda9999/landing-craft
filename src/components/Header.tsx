@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import HydraLogo from "../../assets/Hydra.logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,6 +33,9 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
+          <div className="absolute left-8 top-4 flex items-center">
+            <img src={HydraLogo} alt="Hydra Tech Logo" className="h-12 w-auto" />
+          </div>
           <motion.div 
             whileHover={{ scale: 1.05 }}
             className="flex-shrink-0"

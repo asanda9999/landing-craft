@@ -6,7 +6,7 @@ const Pricing = () => {
   const plans = [
     {
       name: 'Starter',
-      price: '$997',
+      price: 'R1500',
       period: 'one-time',
       description: 'Perfect for small businesses getting started online',
       features: [
@@ -16,7 +16,6 @@ const Pricing = () => {
         'Contact form integration',
         'Google Analytics setup',
         '2 rounds of revisions',
-        '7-day delivery',
         '30-day support'
       ],
       popular: false,
@@ -24,7 +23,7 @@ const Pricing = () => {
     },
     {
       name: 'Professional',
-      price: '$1,997',
+      price: 'R3,000',
       period: 'one-time',
       description: 'Ideal for businesses serious about conversions',
       features: [
@@ -35,7 +34,6 @@ const Pricing = () => {
         'Email marketing setup',
         'Social media integration',
         '5 rounds of revisions',
-        '5-day delivery',
         '60-day support',
         'Performance analytics dashboard'
       ],
@@ -44,7 +42,7 @@ const Pricing = () => {
     },
     {
       name: 'Enterprise',
-      price: '$3,997',
+      price: 'R5,000',
       period: 'one-time',
       description: 'Complete solution for growing businesses',
       features: [
@@ -55,11 +53,9 @@ const Pricing = () => {
         'Content management system',
         'Custom animations',
         'Unlimited revisions',
-        '3-day delivery',
         '90-day support',
         'Monthly performance reports',
         'Priority support',
-        'Free maintenance (3 months)'
       ],
       popular: false,
       color: 'bg-black'
