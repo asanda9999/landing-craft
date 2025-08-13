@@ -30,10 +30,10 @@ const Header = () => {
         isScrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="absolute left-8 top-4 flex items-center">
+          <div className="flex items-center mr-4">
             <img src={HydraLogo} alt="Hydra Tech Logo" className="h-12 w-auto" />
           </div>
           <motion.div 

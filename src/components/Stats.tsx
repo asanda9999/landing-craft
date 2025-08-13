@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 
 const Stats = () => {
   const stats = [
-    { number: '200+', label: 'Landing pages created' },
-    { number: '98%', label: 'Client satisfaction rate' },
-    { number: '7 Days', label: 'Average delivery time' },
+    { number: '10+', label: 'Landing pages created' },
+    { number: '90%', label: 'Client satisfaction rate' },
+    { number: '14 Days', label: 'Average delivery time' },
     { number: '45%', label: 'Average conversion boost' },
   ];
 

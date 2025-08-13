@@ -42,7 +42,7 @@ const Footer = () => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-2 space-y-6"
           >
-            <div className="text-3xl font-bold">LandingCraft</div>
+            <div className="text-3xl font-bold">Hydra Tech</div>
             <p className="text-gray-300 leading-relaxed max-w-md">
               Creating stunning, high-converting landing pages for small businesses. 
               We help you establish a strong online presence and drive real results.
@@ -110,8 +110,7 @@ const Footer = () => {
               <div className="text-white text-xs font-bold">📱</div>
             </div>
             <div>
-              <div className="text-xs text-gray-600">Get a</div>
-              <div className="font-semibold">Free Quote</div>
+              
             </div>
           </motion.div>
 
@@ -124,8 +123,7 @@ const Footer = () => {
               <div className="text-white text-xs font-bold">▷</div>
             </div>
             <div>
-              <div className="text-xs text-gray-600">View our</div>
-              <div className="font-semibold">Portfolio</div>
+             
             </div>
           </motion.div>
         </motion.div>
@@ -140,7 +138,7 @@ const Footer = () => {
         >
           <div className="flex flex-col lg:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © 2025 LandingCraft. All rights reserved.
+              © 2025 Hydra Tech. All rights reserved.
             </p>
             
             <div className="flex flex-wrap gap-6 text-sm text-gray-400">

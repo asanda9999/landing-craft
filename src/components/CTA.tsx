@@ -230,12 +230,12 @@ const CTA = () => {
               Prefer to reach out directly?
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center text-sm">
-              <a href="mailto:hello@landingcraft.com" className="text-black font-semibold hover:underline">
-                hello@landingcraft.com
+              <a href="mailto:hydratechsolutions@gmail.com" className="text-black font-semibold hover:underline">
+                hydratechsolutions@gmail.com
               </a>
               <span className="hidden sm:block text-gray-400">•</span>
-              <a href="tel:+1234567890" className="text-black font-semibold hover:underline">
-                (123) 456-7890
+              <a href="tel:+27 718524662" className="text-black font-semibold hover:underline">
+                (071) 852-4662
               </a>
             </div>
           </motion.div>
