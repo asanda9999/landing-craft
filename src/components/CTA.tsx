@@ -13,9 +13,9 @@ const CTA = () => {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const services = [
-    'Starter Package ($997)',
-    'Professional Package ($1,997)',
-    'Enterprise Package ($3,997)',
+    'Starter Package (R1,500)',
+    'Professional Package (R3,000)',
+    'Enterprise Package (R5,000)',
     'Custom Solution',
     'Consultation Only'
   ];
