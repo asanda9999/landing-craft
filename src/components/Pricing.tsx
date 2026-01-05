@@ -6,7 +6,7 @@ const Pricing = () => {
   const plans = [
     {
       name: 'Starter',
-      price: 'R1,500',
+      price: 'R3500',
       period: 'one-time',
       description: 'Perfect for small businesses getting started online',
       features: [
@@ -23,7 +23,7 @@ const Pricing = () => {
     },
     {
       name: 'Professional',
-      price: 'R3,000',
+      price: 'R7000',
       period: 'one-time',
       description: 'Ideal for businesses serious about conversions',
       features: [
@@ -42,7 +42,7 @@ const Pricing = () => {
     },
     {
       name: 'Enterprise',
-      price: 'R5,000',
+      price: 'R9000',
       period: 'one-time',
       description: 'Complete solution for growing businesses',
       features: [
